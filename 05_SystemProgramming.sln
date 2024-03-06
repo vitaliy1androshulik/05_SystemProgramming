@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2_ThreadingHomeWork", "2_Th
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_ThreadingHomeWork", "WPF_ThreadingHomeWork\WPF_ThreadingHomeWork.csproj", "{1FFC3E87-9FA3-4C10-A306-21179379B904}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_TasksHomeWork", "WPF_TasksHomeWork\WPF_TasksHomeWork.csproj", "{83895CD6-29A0-497A-9568-6326002F354A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_TasksHomeWork", "WPF_TasksHomeWork\WPF_TasksHomeWork.csproj", "{83895CD6-29A0-497A-9568-6326002F354A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_TasksHomeWork", "03_TasksHomeWork\03_TasksHomeWork.csproj", "{4B1F39E2-E611-4100-B570-2F04FADD3DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_TasksHomeWork", "03_TasksHomeWork\03_TasksHomeWork.csproj", "{4B1F39E2-E611-4100-B570-2F04FADD3DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_TaskAsyncAwait", "WPF_TaskAsyncAwait\WPF_TaskAsyncAwait.csproj", "{8E60E5F8-1011-47FD-98E5-2F46532F930F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4B1F39E2-E611-4100-B570-2F04FADD3DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B1F39E2-E611-4100-B570-2F04FADD3DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B1F39E2-E611-4100-B570-2F04FADD3DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E60E5F8-1011-47FD-98E5-2F46532F930F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E60E5F8-1011-47FD-98E5-2F46532F930F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E60E5F8-1011-47FD-98E5-2F46532F930F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E60E5F8-1011-47FD-98E5-2F46532F930F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

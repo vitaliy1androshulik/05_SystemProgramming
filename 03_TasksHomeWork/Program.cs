@@ -32,7 +32,11 @@ namespace _03_TasksHomeWork
             //Task taskSum = Task.Run(GetSumNumber);
 
             //N4
-            Task task = Task.Run(ReapitingNumbers);
+            int[] array = RandomNumbers();
+            Task<int[]> task1 = new Task<int[]>(()=>DeleteReapitingNumbers(array));
+            //Task task2 = Task.Run(() => SortArray(array));
+            Task task = task1.ContinueWith(SortArray).ContinueWith(ArrayBinarySearch);
+            task1.Start();
             task.Wait();
         }
         static void GetCurrentTime()
@@ -88,24 +92,33 @@ namespace _03_TasksHomeWork
             int[] a = RandomNumbers();
             Console.WriteLine("Sum of number :: " + a.Sum());
         }
-        static void ReapitingNumbers()
+        static int ArrayBinarySearch(Task<int[]> prevTask)
         {
-            int[]q= RandomNumbers();
-            int[]a = q.Distinct().ToArray();
-            Console.WriteLine("Array cleared!");
+            Console.WriteLine();
+            Console.Write("Enter number for search :: ");
+            int b = int.Parse(Console.ReadLine());
+            int c = Array.BinarySearch(prevTask.Result, b);
+            Console.WriteLine("Number in index :: "+c);
+            return c;
+        }
+        static int[] SortArray(Task<int[]> prevTask)
+        {
+            int[] a = prevTask.Result;
             Array.Sort(a);
             Console.WriteLine("Array sorted!");
-            Console.WriteLine("New cleared array!");
+            Console.Write("New Array :: ");
             foreach (var item in a)
             {
                 Console.Write(item+" ");
             }
-            Console.WriteLine();
-            Console.Write("Enter number for search :: ");
-            int b =int.Parse(Console.ReadLine());
-            int c =Array.BinarySearch(a,b);
-            Console.WriteLine(c);
-
+            return a;
+        }
+        static int[] DeleteReapitingNumbers(int[] q)
+        {
+            //int[] q = RandomNumbers();
+            int[] a = q.Distinct().ToArray();
+            Console.WriteLine("Array cleared!");
+            return a;
         }
         static void Test()
         {
