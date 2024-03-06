@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPF_AsyncHomeWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_AsyncHomeWork"
+        mc:Ignorable="d"
+        Title="Copyter" Height="125" Width="690" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox x:Name="TextBoxFrom" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="601"/>
+        <TextBox x:Name="TextBoxTo" HorizontalAlignment="Left" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="601"/>
+        <Button Click="BtnFrom_Click" x:Name="BtnFrom" Content="From" HorizontalAlignment="Left" Margin="617,10,0,0" VerticalAlignment="Top" Width="54" Height="18" FontWeight="Bold"/>
+        <Button Click="BtnTo_Click" x:Name="BtnTo" Content="To" HorizontalAlignment="Left" Margin="617,33,0,0" VerticalAlignment="Top" Width="54" Height="18" FontWeight="Bold"/>
+        <Button Click ="BtnCopy_ClickAsync" x:Name="BtnCopy" Content="Copy" HorizontalAlignment="Left" Margin="617,62,0,0" VerticalAlignment="Top" Width="54" Height="20" FontWeight="Bold"/>
+        <Button Click="BtnStop_Click" x:Name="BtnStop" Content="Stop" HorizontalAlignment="Left" Margin="557,62,0,0" VerticalAlignment="Top" Width="54" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
