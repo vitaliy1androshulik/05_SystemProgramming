@@ -13,6 +13,6 @@
         <Button Click="BtnTo_Click" x:Name="BtnTo" Content="To" HorizontalAlignment="Left" Margin="617,33,0,0" VerticalAlignment="Top" Width="54" Height="18" FontWeight="Bold"/>
         <Button Click ="BtnCopy_ClickAsync" x:Name="BtnCopy" Content="Copy" HorizontalAlignment="Left" Margin="617,62,0,0" VerticalAlignment="Top" Width="54" Height="20" FontWeight="Bold"/>
         <Button Click="BtnStop_Click" x:Name="BtnStop" Content="Stop" HorizontalAlignment="Left" Margin="557,62,0,0" VerticalAlignment="Top" Width="54" FontWeight="Bold"/>
-
+       
     </Grid>
 </Window>

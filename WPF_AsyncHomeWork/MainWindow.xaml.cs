@@ -47,12 +47,12 @@ namespace WPF_AsyncHomeWork
                 System.IO.Path.GetFileName(fromPath));
             try
             {
-                await CopyFileAsync(fromPath, toFolderPath);
+                await CopyFileAsync(fromPath, finalFilePath);
                 MessageBox.Show("File copied!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Select files pathes!!");
+                MessageBox.Show($"Select files pathes!!{ex.Message}");
             }
         }
         Task<string> GetFolderPath()
