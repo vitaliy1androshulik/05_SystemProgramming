@@ -7,13 +7,20 @@
         mc:Ignorable="d"
         Title="Copyter" Height="450" Width="800"
         d:DataContext="{d:DesignInstance local:ViewModel, IsDesignTimeCreatable=True}"
-        Background="#FF9999">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
     <Window.Resources>
-        <Style TargetType="{x:Type Button}">
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignPaperLightButton}">
             <Setter Property="Margin" Value="5"></Setter>
             <Setter Property="Padding" Value="5"></Setter>
         </Style>
-        <Style x:Key="pathTextBox" TargetType="{x:Type TextBox}">
+        <Style x:Key="pathTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource MaterialDesignTextBox}">
             <Setter Property="Margin" Value="5"></Setter>
             <Setter Property="Padding" Value="5"></Setter>
             <Setter Property="IsReadOnly" Value="True"></Setter>
@@ -25,7 +32,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="61.5"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="4.5"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -34,22 +41,26 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Foreground="White" FontWeight="Bold" FontFamily="Unispace" Margin="0,0,0,38" Grid.RowSpan="2">From :</Label>
-            <TextBox x:Name="SourceTextBox" Text="{Binding Source}" Style="{StaticResource pathTextBox}" Grid.Column="1" Margin="5,5,5,5" FontFamily="Unispace"></TextBox>
-            <Label Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Foreground="White" FontFamily="Unispace" Grid.RowSpan="3">To :</Label>
-            <TextBox x:Name="DestTextBox" Text="{Binding Destination}" Style="{StaticResource pathTextBox}" Grid.Column="1" Grid.Row="1" Margin="5,5,5,5" FontFamily="Unispace"></TextBox>
-            <Button Click="BtnSource_Click" Grid.Column="2" Foreground="White" Background="#FF99FF99" FontWeight="Bold" FontFamily="Unispace" Margin="5,5,0,5" BorderBrush="White" >Browse</Button>
-            <Button Click="BtnDestination_Click" Grid.Column="2" Grid.Row="1" Background="#FF99FF99" FontFamily="Unispace" FontWeight="Bold" Foreground="White" Margin="5,5,0,5" BorderBrush="White">Browse</Button>
+            <Label HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontWeight="Bold" FontFamily="Unispace" Margin="0,0,0,38" Grid.RowSpan="2">From :</Label>
+            <TextBox Style="{StaticResource pathTextBox}" x:Name="SourceTextBox" Text="{Binding Source}"  Grid.Column="1" Margin="5,5,5,5" FontFamily="Unispace"></TextBox>
+            <Label Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontFamily="Unispace" Grid.RowSpan="3">To :</Label>
+            <TextBox Style="{StaticResource pathTextBox}" x:Name="DestTextBox" Text="{Binding Destination}"  Grid.Column="1" Grid.Row="1" Margin="5,5,5,5" FontFamily="Unispace"></TextBox>
+            <Button Click="BtnSource_Click" Grid.Column="2">Browse</Button>
+            <Button Click="BtnDestination_Click" Grid.Column="2" Grid.Row="1">Browse</Button>
 
         </Grid>
-        <Button DockPanel.Dock="Top" Padding="10" Grid.Row="3" Grid.Column="1" Click="BtnCopy_Click" FontWeight="Bold" FontSize="20" Foreground="White" FontFamily="Unispace" Background="#FF99FF99" BorderBrush="White">Copy</Button>
-        <ProgressBar Value="{Binding Progress}"
+        <Button DockPanel.Dock="Top" Grid.Row="3" Grid.Column="1" Click="BtnCopy_Click" FontSize="20">Copy</Button>
+        <ProgressBar Background="{StaticResource PrimaryHueDarkBrush}" Foreground="{StaticResource PrimaryHueMidBrush}" Value="{Binding Progress}"
                      IsIndeterminate="{Binding IsWaiting}" 
-                     Height="18" DockPanel.Dock="Bottom"></ProgressBar>
-        <ListBox ItemsSource="{Binding Processes}" HorizontalContentAlignment="Stretch" FontFamily="Unispace" Background="#FFFF9999" FontWeight="Bold" Foreground="White">
+                     Height="8" DockPanel.Dock="Bottom"></ProgressBar>
+        <ListBox ItemsSource="{Binding Processes}" HorizontalContentAlignment="Stretch" FontFamily="Unispace" FontWeight="Bold" Foreground="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <ListBoxItem>
+                    <materialDesign:Card
+                        Background="{DynamicResource PrimaryHueDarkBrush}"
+                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                        Padding="8"
+                        UniformCornerRadius="6">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto" MaxWidth="300"></ColumnDefinition>
@@ -59,15 +70,15 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock HorizontalAlignment="Center" FontWeight ="Bold" MaxWidth="200" TextWrapping="NoWrap" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" DockPanel.Dock="Left" Text="{Binding Name}" Margin="20,0"></TextBlock>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" DockPanel.Dock="Left"> Speed : <Run Text="{Binding MegaBytesPerSecond, Mode=OneWay}">
-                                </Run></TextBlock>
-                            <ProgressBar Grid.Column="2" Height ="10" Margin="5" DockPanel.Dock="Left" Value="{Binding Percentage}"></ProgressBar>
+            </Run></TextBlock>
+                            <ProgressBar Background="{StaticResource PrimaryHueDarkBrush}" Foreground="{StaticResource PrimaryHueMidBrush}" Grid.Column="2" Height ="10" Margin="5" DockPanel.Dock="Left" Value="{Binding Percentage}"></ProgressBar>
                             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3" DockPanel.Dock="Right"><Run Text="{Binding PercentageInt, Mode=OneWay}">
-                                </Run> %</TextBlock>
+            </Run> %</TextBlock>
                         </Grid>
-                    </ListBoxItem>
+                    </materialDesign:Card>
+
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
     </DockPanel>
-
 </Window>

@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_TaskAsyncAwait", "WPF_T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_AsyncHomeWork", "WPF_AsyncHomeWork\WPF_AsyncHomeWork.csproj", "{185FC7B8-B09F-4EC7-8D8B-05678123F814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_CopyterAsyncAwait", "WPF_CopyterAsyncAwait\WPF_CopyterAsyncAwait.csproj", "{C2319497-835E-4D50-A6EE-946FB0468255}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_CopyterAsyncAwait", "WPF_CopyterAsyncAwait\WPF_CopyterAsyncAwait.csproj", "{C2319497-835E-4D50-A6EE-946FB0468255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_ParallelHomeWork", "06_ParallelHomeWork\06_ParallelHomeWork.csproj", "{249249E4-D757-477A-BBB2-DB87D0CBB540}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{C2319497-835E-4D50-A6EE-946FB0468255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2319497-835E-4D50-A6EE-946FB0468255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2319497-835E-4D50-A6EE-946FB0468255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249249E4-D757-477A-BBB2-DB87D0CBB540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249249E4-D757-477A-BBB2-DB87D0CBB540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249249E4-D757-477A-BBB2-DB87D0CBB540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249249E4-D757-477A-BBB2-DB87D0CBB540}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

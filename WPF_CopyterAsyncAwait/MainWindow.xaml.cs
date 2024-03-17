@@ -48,8 +48,8 @@ namespace WPF_CopyterAsyncAwait
 
             CopyProcessInfo info = new CopyProcessInfo(fileName);
             model.AddProccess(info);
-            info.Percentage = 100;
             await CopyFileAsync(model.Source, desFilePath, info);
+            info.Percentage = 100;
             MessageBox.Show("Copied!", "Copy");
         }
         private Task CopyFileAsync(string src, string desc, CopyProcessInfo info)
